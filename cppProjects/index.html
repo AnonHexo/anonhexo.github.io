@@ -27,14 +27,6 @@
             border: 0;
         }
 
-        h1,
-        h2,
-        a {
-            color: #4A4E69;
-            font-weight: 500;
-            font-family: 'Open Sans', sans-serif;
-        }
-
         /* a:hover {
             transition-duration: 0.3s;
             color: #d1d3e2;
@@ -45,18 +37,19 @@
             color: #4A4E69;
         } */
 
+        h1,
+        h2,
+        a {
+            color: #4A4E69;
+            font-weight: 500;
+            font-family: 'Open Sans', sans-serif;
+        }
+
         .h1,
         h1 {
             color: #4A4E69;
             font-family: 'Open Sans', sans-serif;
             font-size: 40px;
-        }
-
-        code {
-            background-color: #eee;
-            border: 1px solid #999;
-            display: inline-block;
-            padding: 3px;
         }
 
         h3 {
@@ -65,6 +58,13 @@
             color: #4A4E69;
             font-family: 'Open Sans', sans-serif;
             margin-bottom: -10px;
+        }
+
+        code {
+            background-color: #eee;
+            border: 1px solid #999;
+            display: inline-block;
+            padding: 3px;
         }
     </style>
 </head>
@@ -75,11 +75,30 @@
                 width='200' class='profile-pic'>
             <h1><b>cppProjects</b></h1>
             <div class='description'>
-                <a>cppProjects is a reporitory that contains all my C++ projects that I've made and I'm developing.</a> <br>
+                <a>cppProjects is a reporitory that contains all my C++ projects that I've made and I'm developing.</a>
+                <br>
                 <a>You can find the repository <a href="https://github.com/AnonHexo/cppProjects">here.</a></a>
-                <br> <br> <br> <br>
+                <br> <br>
 
-                <h3>This page is currently begin developed.</h3>
+                <h2><b>Current projects:</b></h2>
+                <a href="https://github.com/AnonHexo/cppProjects/tree/main/MemoryScanner">
+                    <h3>MemoryScanner (b0.2)</h3>
+                </a>
+                <br>
+                <a>MemoryScanner is my first project I ever made in C++. <br> It's a simple program that reads/writes
+                    values on selected memory address by using Windows.h header. <br> (ReadMemoryAddress(),
+                    WriteMemoryAddress()
+                    functions)</a> <br>
+
+                <a href="https://github.com/AnonHexo/cppProjects/tree/main/KeyLogger">
+                    <h3>KeyLogger (b0.1)</h3>
+                </a>
+                <br>
+                <a>KeyLogger is the second project that I've made and it's not completed at the moment. <br> Uses a
+                    function to register all keys pressed by the user and store them to a file. <br> (uses GetAsyncKeyState()
+                    function from Windows SDK headers)</a>
+
+                <!-- <h3>This page is currently begin developed.</h3> -->
             </div>
         </div>
     </section>
