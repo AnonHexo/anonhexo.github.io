@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reactive 3D Test | AnonHexo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1000px;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .container {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            transform-style: preserve-3d;
+            min-height: 80vh;
+            width: 35rem;
+            border-radius: 30px;
+            padding: 0rem 5rem;
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            min-height: 35vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            border-radius: 50%;
+            width: 10rem;
+            z-index: 2;
+            transition: all 0.75s ease-out;
+        }
+
+        .circle {
+            width: 15rem;
+            height: 15rem;
+            background: linear-gradient(to right,
+                    rgba(245, 70, 66, 0.75),
+                    rgba(8, 83, 156, 0.75));
+            position: absolute;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .info h1 {
+            font-size: 3rem;
+            transition: all 0.75s ease-out;
+        }
+
+        .info h3 {
+            font-size: 1.3rem;
+            padding: 2rem 0rem;
+            color: #585858;
+            font-weight: lighter;
+            transition: all 0.75s ease-out;
+        }
+
+        .projects {
+            display: flex;
+            justify-content: space-between;
+            transition: all 0.75s ease-out;
+        }
+
+        .projects button {
+            outline: none;
+            padding: 0.5rem 2rem;
+            background: none;
+            border: none;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #585858;
+        }
+
+        button.active {
+            background: #585858;
+            color: white;
+        }
+
+        .link {
+            margin-top: 5rem;
+            transition: all 0.75s ease-out;
+        }
+
+        .link button {
+            outline: none;
+            width: 100%;
+            padding: 1rem 0rem;
+            background: #f54642;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 30px;
+            font-weight: bolder;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="logo">
+                <!-- <div class="circle"></div> -->
+                <img src="https://avatars.githubusercontent.com/u/61375258" alt="avatar">
+            </div>
+            <div class="info">
+                <h1 class="title">AnonHexo</h1>
+                <h3>Wassup dawg I'm AnonHexo a young aspiring full-stack developer!</h3>
+                <div class="projects">
+                    <!-- <button href="">cppProjects</button> -->
+                    <button><a href="../Impulse" style="text-decoration: none; color: #585858;">Impulse</a></button>
+                    <button><a href="../cppProjects" style="text-decoration: none; color: #585858;">cppProjects</a></button>
+                    <!-- <button href="">cppProjects</button> -->
+                </div>
+                <div class="link">
+                    <button><a href="https://github.com/AnonHexo" style="text-decoration: none; color: white;">Visit my Github</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        (() => {
+            if (screen.width < 1500) {
+                return console.warn(
+                    "Responsive 3D mode disabled: device display is too small.\nMake sure your screen's width is at least 1500px."
+                )
+            } else {
+                const card = document.querySelector(".card");
+                const body = document.querySelector("body");
+                const title = document.querySelector(".title");
+                const logo = document.querySelector(".logo img");
+                const link = document.querySelector(".link");
+                const description = document.querySelector(".info h3");
+                const sizes = document.querySelector(".projects");
+
+                body.addEventListener("mousemove", (e) => {
+                    let xAxis = (window.innerWidth / 2 - e.pageX) / 50;
+                    let yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+                    card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+                });
+
+                body.addEventListener("mouseenter", (e) => {
+                    card.style.transition = "none";
+                    title.style.transform = "translateZ(125px)";
+                    logo.style.transform = "translateZ(125px)";
+                    description.style.transform = "translateZ(125px)";
+                    sizes.style.transform = "translateZ(100px)";
+                    link.style.transform = "translateZ(75px)";
+                });
+
+
+                body.addEventListener("mouseleave", (e) => {
+                    card.style.transition = "all 0.5s ease";
+                    card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+                    title.style.transform = "translateZ(0px)";
+                    logo.style.transform = "translateZ(0px)";
+                    description.style.transform = "translateZ(0px)";
+                    sizes.style.transform = "translateZ(0px)";
+                    link.style.transform = "translateZ(0px)";
+                });
+            }
+        })()
+    </script>
+</body>
+
+</html>

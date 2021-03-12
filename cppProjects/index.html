@@ -6,12 +6,32 @@
     <title>AnonHexo - cppProjects</title>
     <!-- <a class='dark-mode' style='text-decoration:none' onclick='enableDarkMode()'>Dark Mode</a> -->
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
         .about {
             margin-bottom: 80px;
         }
 
         .text-center {
             text-align: center;
+        }
+
+        .navbar-text-center {
+            font-family: 'Open Sans', sans-serif;
+            text-align: center;
+            font-size: 14px;
+            padding-top: 5px;
+        }
+
+        .navbar-text-center a:hover {
+            transition-duration: 0.5s;
+            color: #d1d3e2;
+        }
+
+        .navbar-text-center a:not(:hover) {
+            transition-duration: 0.5s;
+            color: #4A4E69;
         }
 
         .profile-pic {
@@ -27,40 +47,35 @@
             border: 0;
         }
 
-        /* a:hover {
-            transition-duration: 0.3s;
-            color: #d1d3e2;
-        }
-
-        a:not(:hover) {
-            transition-duration: 0.3s;
-            color: #4A4E69;
-        } */
-
-        h1,
-        h2,
-        a {
-            color: #4A4E69;
-            font-weight: 500;
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        .h1,
         h1 {
             color: #4A4E69;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 40px;
+        }
+
+        h2 {
+            color: #4A4E69;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
         }
 
         h3 {
             font-weight: normal;
             font-size: 20px;
             color: #4A4E69;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin-bottom: -10px;
         }
 
+        .usage {
+            color: #4A4E69;
+            font-weight: 500;
+            font-family: 'Courier Prime', sans-serif;
+        }
+
         code {
+            font-family: 'Fira Code', sans-serif;
+            font-size: 13px;
             background-color: #eee;
             border: 1px solid #999;
             display: inline-block;
@@ -70,9 +85,17 @@
 </head>
 
 <body>
+    <section class='navbar'>
+        <div class='navbar-text-center'>
+            <a href='../Impulse/index.html' style='text-decoration:none' class='navbar-option'>Impulse</a> |
+            <a href='../index.html' style='text-decoration:none' class='navbar-option'>Home</a> |
+            <a href='#' style='text-decoration:none' class='navbar-option'>cppProjects</a>
+        </div>
+    </section>
+
     <section class='about'>
-        <div class='text-center' style='margin-top:100px'> <img src='https://avatars.githubusercontent.com/u/61375258'
-                width='200' class='profile-pic'>
+        <div class='text-center' style='margin-top:100px'>
+            <img src='https://avatars.githubusercontent.com/u/61375258' width='200' class='profile-pic'>
             <h1><b>cppProjects</b></h1>
             <div class='description'>
                 <a>cppProjects is a reporitory that contains all my C++ projects that I've made and I'm developing.</a>
@@ -80,32 +103,35 @@
                 <a>You can find the repository <a href="https://github.com/AnonHexo/cppProjects">here.</a></a>
                 <br> <br>
 
-                <h2><b>Current projects:</b></h2>
-                <a href="https://github.com/AnonHexo/cppProjects/tree/main/MemoryScanner">
-                    <h3>MemoryScanner (b0.2)</h3>
-                </a>
-                <br>
-                <a>MemoryScanner is my first project I ever made in C++. <br> It's a simple program that reads/writes
-                    values on selected memory address by using Windows.h header. <br> (ReadMemoryAddress(),
-                    WriteMemoryAddress()
-                    functions)</a> <br>
+                <div class="projects">
+                    <h2><b>Current projects:</b></h2>
+                    <a href="https://github.com/AnonHexo/cppProjects/tree/main/MemoryScanner">
+                        <h3>MemoryScanner (b0.2)</h3>
+                    </a>
+                    <br>
+                    <a>MemoryScanner is my first project I ever made in C++. <br> It's a simple program that
+                        reads/writes
+                        values on selected memory address by using Windows.h header. <br> (ReadMemoryAddress(),
+                        WriteMemoryAddress()
+                        functions)</a> <br>
 
-                <a href="https://github.com/AnonHexo/cppProjects/tree/main/KeyLogger">
-                    <h3>KeyLogger (b1.1)</h3>
-                </a>
-                <br>
-                <a>KeyLogger is the second project that I've made and it's not fully completed. <br> Uses a
-                    function to register all keys pressed by the user and store them to a file. <br> (uses GetAsyncKeyState()
-                    function from Windows SDK headers)</a>
+                    <a href="https://github.com/AnonHexo/cppProjects/tree/main/KeyLogger">
+                        <h3>KeyLogger (b1.1)</h3>
+                    </a>
+                    <br>
+                    <a>KeyLogger is the second project that I've made and it's not fully completed. <br> Uses a
+                        function to register all keys pressed by the user and store them to a file. <br> (uses
+                        GetAsyncKeyState()
+                        function from Windows SDK headers)</a>
 
-                <!-- <h3>This page is currently begin developed.</h3> -->
+                    <h3>This page is still begin developed...</h3>
+                </div>
             </div>
-        </div>
     </section>
 </body>
 
 <script>
-    console.warn("[WARNING] If you're using an adblocker the main div may be not visible.")
+    console.log('sup ma boi');
 </script>
 
 </html>

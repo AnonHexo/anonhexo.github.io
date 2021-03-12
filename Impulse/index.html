@@ -6,12 +6,32 @@
     <title>AnonHexo - Impulse</title>
     <!-- <a class='dark-mode' style='text-decoration:none' onclick='enableDarkMode()'>Dark Mode</a> -->
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
         .about {
             margin-bottom: 80px;
         }
 
         .text-center {
             text-align: center;
+        }
+
+        .navbar-text-center {
+            font-family: 'Open Sans', sans-serif;
+            text-align: center;
+            font-size: 14px;
+            padding-top: 5px;
+        }
+
+        .navbar-text-center a:hover {
+            transition-duration: 0.5s;
+            color: #d1d3e2;
+        }
+
+        .navbar-text-center a:not(:hover) {
+            transition-duration: 0.5s;
+            color: #4A4E69;
         }
 
         .profile-pic {
@@ -27,124 +47,140 @@
             border: 0;
         }
 
-        h1,
-        h2,
-        a {
-            color: #4A4E69;
-            font-weight: 500;
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        /* a:hover {
-            transition-duration: 0.3s;
-            color: #d1d3e2;
-        }
-
-        a:not(:hover) {
-            transition-duration: 0.3s;
-            color: #4A4E69;
-        } */
-
-        .h1,
         h1 {
             color: #4A4E69;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 40px;
         }
 
-        code {
-            background-color: #eee;
-            border: 1px solid #999;
-            display: inline-block;
-            padding: 3px;
+        h2 {
+            color: #4A4E69;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
         }
 
         h3 {
             font-weight: normal;
             font-size: 20px;
             color: #4A4E69;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin-bottom: -10px;
+        }
+
+        .usage {
+            color: #4A4E69;
+            font-weight: 500;
+            font-family: 'Courier Prime', sans-serif;
+        }
+
+        code {
+            font-family: 'Fira Code', sans-serif;
+            font-size: 13px;
+            background-color: #eee;
+            border: 1px solid #999;
+            display: inline-block;
+            padding: 3px;
         }
     </style>
 </head>
 
 <body>
+    <section class='navbar'>
+        <div class='navbar-text-center'>
+            <a href='#' style='text-decoration:none' class='navbar-option'>Impulse</a> |
+            <a href='../index.html' style='text-decoration:none' class='navbar-option'>Home</a> |
+            <a href='../cppProjects/' style='text-decoration:none' class='navbar-option'>cppProjects</a>
+        </div>
+    </section>
+
     <section class='about'>
-        <div class='text-center' style='margin-top:100px'> <img src='https://avatars.githubusercontent.com/u/61375258'
-                width='200' class='profile-pic'>
+        <div class='text-center' style='margin-top:100px'>
+            <img src='https://avatars.githubusercontent.com/u/61375258' width='200' class='profile-pic'>
             <h1><b>Impulse Documentation</b></h1>
             <div class='description'>
                 <a>Impulse is a DoS and flood toolkit which includes different attack methods and various arguments.</a>
                 <br>
-                <a>You can find the repository <a href="https://github.com/AnonHexo/Impulse">here.</a></a>
+                <a>You can find the repository <a href="https://github.com/AnonHexo/Impulse">here</a>.</a>
                 <br> <br>
 
-                <h2><b>Usage:</b></h2>
-                <a><code>python3 impulse.py --target &ltIP/PHONE_NUMBER&gt --method &ltMETHOD&gt --time &ltTIME&gt
-                        --threads &ltTHREADS&gt</code></a>
-                <br> <br> <br>
-
-
-                <h2><b>Arguments:</b></h2>
-
-                <h3>--target arguments:</h3> <br>
-                <a><code>--target &ltIP:PORT&gt</code> (eg. 127.0.0.1)</a> <br>
-                <a><code>--target &ltPHONE_NUMBER&gt</code> (must be without spaces and with prefix eg.
-                    +393421234567)</a>
-                <br> <br>
-
-                <h3>--method agruments:</h3> <br>
-                <a><code>--method SMS</code> (with phone number): this method is pretty self-explanatory, also includes
-                    call flood (uses
-                    public sms and
-                    call verification API).</</a> <br>
-                    <a><code>--method UDP</code>: send udp packets with random size to the target making it unable to
-                        handle
-                        them
-                        all.</a> <br>
-                    <a><code>--method HTTP</code>: sends http requests to the target host overloading the server and
-                        slowing
-                        it down.</a> <br>
-                    <a><code>--method TCP</code>: sends tcp three-way handshake requests to the target host overloading
-                        the server
-                        and
-                        slowing it down.</a> <br>
-                    <a><code>--method SYN</code>: sends requests and try to consume all server resources and making the
-                        host
-                        unavaiable.</a> <br>
-                    <a><code>--method POD</code>: sends request with oversized or malformed packets and causing freeze
-                        the target
-                        machine to freeze.</a> <br>
-                    <a><code>--method SLOWLORIS</code>: sends multiple http requests between the target and the attacker
-                        and try to
-                        keep
-                        them open</a> <br>
-                    <a><code>--method MEMCACHED</code>: sends spoofed udp memcached request to the target overwhelming
-                        the target
-                        resources.</a>
-                    <br> <br>
-
-                    <h3>--time argument:</h3> <br>
-                    <a><code>--time &ltTIME&gt</code> (eg. 100)</a> <br> <br>
-
-                    <h3>--therads argument:</h3> <br>
-                    <a><code>--threads &ltTHREADS&gt</code> (eg. 300)</a>
-                    <a></a>
+                <div class="usage">
+                    <h2><b>Usage:</b></h2>
+                    <a><code>python3 impulse.py --target &ltIP/PHONE_NUMBER&gt --method &ltMETHOD&gt --time &ltTIME&gt
+                            --threads &ltTHREADS&gt</code></a>
                     <br> <br> <br>
 
-                    <h2><b>Examples:</b></h2>
 
-                    <a><code>python3 impulse.py --target 192.168.1.1 --method SLOWLORIS --time 100 --threads 300</code></a> <br>
-                    <a><code>python3 impulse.py --target +11234567890 --method SMS --time 10 --threads 100</code></a> <br>
-                    <a><code>python3 impulse.py --target 127.0.0.1 --method TCP --time 10 --threads 50</code></a> <br>
+                    <h2><b>Arguments:</b></h2>
+
+                    <h3><b>--target</b> arguments:</h3> <br>
+                    <a><code>--target &ltIP:PORT&gt</code> (eg. 127.0.0.1)</a> <br>
+                    <a><code>--target &ltPHONE_NUMBER&gt</code> (must be without spaces and with prefix eg.
+                        +393421234567)</a>
+                    <br> <br>
+
+                    <h3><b>--method</b> agruments:</h3> <br>
+                    <a><code>--method SMS</code> (with phone number): this method is pretty self-explanatory, also
+                        includes
+                        call flood (uses
+                        public sms and
+                        call verification API).</</a> <br>
+                        <a><code>--method UDP</code>: send udp packets with random size to the target making it unable
+                            to
+                            handle
+                            them
+                            all.</a> <br>
+                        <a><code>--method HTTP</code>: sends http requests to the target host overloading the server and
+                            slowing
+                            it down.</a> <br>
+                        <a><code>--method TCP</code>: sends tcp three-way handshake requests to the target host
+                            overloading
+                            the server
+                            and
+                            slowing it down.</a> <br>
+                        <a><code>--method SYN</code>: sends requests and try to consume all server resources and making
+                            the
+                            host
+                            unavaiable.</a> <br>
+                        <a><code>--method POD</code>: sends request with oversized or malformed packets and causing
+                            freeze
+                            the target
+                            machine to freeze.</a> <br>
+                        <a><code>--method SLOWLORIS</code>: sends multiple http requests between the target and the
+                            attacker
+                            and try to
+                            keep
+                            them open</a> <br>
+                        <a><code>--method MEMCACHED</code>: sends spoofed udp memcached request to the target
+                            overwhelming
+                            the target
+                            resources.</a>
+                        <br> <br>
+
+                        <h3><b>--time</b> argument:</h3> <br>
+                        <a><code>--time &ltTIME&gt</code> amount of time for the attack (in seconds)</a> <br> <br>
+
+                        <h3><b>--threads</b> argument:</h3> <br>
+                        <a><code>--threads &ltTHREADS&gt</code> amount of threads for the attack (more threads = more
+                            speed)</a>
+                        <a></a>
+                        <br> <br> <br>
+
+                        <h2><b>Examples:</b></h2>
+
+                        <a><code>python3 impulse.py --target 192.168.1.1 --method SLOWLORIS --time 100 --threads
+                                300</code></a> <br>
+                        <a><code>python3 impulse.py --target +11234567890 --method SMS --time 10 --threads
+                                100</code></a>
+                        <br>
+                        <a><code>python3 impulse.py --target 127.0.0.1 --method TCP --time 10 --threads 50</code></a>
+                        <br>
+                </div>
             </div>
-        </div>
     </section>
 </body>
 
 <script>
-    console.warn("[WARNING] If you're using an adblocker the main div may be not visible.")
+    console.log('sup ma boi');
 </script>
 
 </html>
