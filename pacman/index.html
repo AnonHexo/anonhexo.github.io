@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>PacMan!</title>
+    <style type="text/css" media="screen">
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+        a {
+            text-decoration: none;
+            color: whitesmoke;
+            text-align: center;
+        }
+
+        header {
+            font-size: larger;
+            font-family: 'Roboto';
+            margin-top: 20%;
+        }
+
+        button {
+            font-size: small;
+            margin-left: 130px;
+            border-radius: 10px;
+            width: 200px;
+            height: 100px;
+            font-family: 'Roboto';
+            background-color: lightgray;
+        }
+
+        input {
+            height: 50px;
+            width: 190px;
+            text-align: center;
+            font-size: small;
+            margin-left: 130px;
+            border-radius: 5px;
+            font-family: 'Roboto';
+            background-color: lightgray;
+        }
+
+        #instructions {
+            font-style: italic;
+            font-size: large;
+            margin-left: 30px;
+        }
+
+        #instructions0 {
+            font-style: italic;
+            font-size: medium;
+            margin-left: 30px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .text {
+            color: white;
+            font-family: "Roboto";
+        }
+
+        .smallText {
+            color: white;
+            font-family: "Roboto";
+            font-size: 12px;
+        }
+
+        .largeText {
+            color: white;
+            font-family: "Roboto";
+            font-size: 24px;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .yellow {
+            color: yellow;
+        }
+
+        .white {
+            color: white;
+        }
+
+        #point-counter {
+            margin: 35px;
+        }
+
+        #result-msg {
+            right: 50px;
+        }
+
+        .container {
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .item {
+            float: left;
+            margin: 0 20px;
+            text-align: center;
+        }
+
+        body {
+            background: rgb(39, 39, 39);
+        }
+
+        canvas {
+            background: #161616;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="text-align: center;">
+        <h1><b><span class="white">Benvento su <span class="yellow"><span class="red">P</span>ac<span
+                            class="red">M</span>an</span>!</span></b></h1>
+    </header>
+
+    <div id="welcome" class="text" style="width: 500px; margin-left: auto; margin-right: auto; text-align: justify;">
+        <p id="instructions">Usa "W, A, S, D" o le frecce direzionali per muoverti!</p>
+        <p id="instructions0">Colleziona le "Pillole" (lampeggianti) per mangiare i fantasi e finisci tutte le "berry"
+            senza essere catturato da un fantasma per vincere!</p>
+        <p>
+            <button onclick="startGame()">Gioca ora!</button> <br>
+            <input type="color" id="colorPicker" placeholder="colore" value="#FF0000">
+        </p>
+    </div>
+
+    <div id="canvass" class="container" hidden>
+        <div class="item">
+            <canvas id="pmcanvas" width="450" height=500"></canvas><br />
+            <div id="point-counter" class="text"></div>
+        </div>
+
+        <div class="item">
+            <div id="result-view" class="hidden">
+                <span id="result-msg" class="largeText"></span>
+                <br />
+                <!-- <table id="score-table" class="text" style="border: solid 1px white; margin: 0 auto;"></table> -->
+                <!-- <p class="smallText" style="text-align: center;">The score table keeps track of local matches only.</p> -->
+                <br />
+                <a href="#" onclick="pacman.engine.newGame('username'); pacman.engine.hideResultView()">Gioca di
+                    nuovo</a>
+                <a href="#" onclick="pacman.engine.hideResultView(); initWelcomeView(); deteachKeyListener();">Torna al
+                    menu</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
