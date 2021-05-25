@@ -7,6 +7,12 @@
     <style type="text/css" media="screen">
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+        a {
+            text-decoration: none;
+            color: whitesmoke;
+            text-align: center;
+        }
+
         header {
             font-size: larger;
             font-family: 'Roboto';
@@ -19,6 +25,17 @@
             border-radius: 10px;
             width: 200px;
             height: 100px;
+            font-family: 'Roboto';
+            background-color: lightgray;
+        }
+
+        input {
+            height: 50px;
+            width: 190px;
+            text-align: center;
+            font-size: small;
+            margin-left: 130px;
+            border-radius: 5px;
             font-family: 'Roboto';
             background-color: lightgray;
         }
@@ -89,11 +106,11 @@
         }
 
         body {
-            background: black;
+            background: rgb(39, 39, 39);
         }
 
         canvas {
-            background: black;
+            background: #161616;
             margin: 0;
         }
     </style>
@@ -105,18 +122,19 @@
                             class="red">M</span>an</span>!</span></b></h1>
     </header>
 
-    <div id="welcome" class="text" style="width: 448px; margin-left: auto; margin-right: auto; text-align: justify;">
+    <div id="welcome" class="text" style="width: 500px; margin-left: auto; margin-right: auto; text-align: justify;">
         <p id="instructions">Usa "W, A, S, D" o le frecce direzionali per muoverti!</p>
-        <p id="instructions0">Colleziona gli "Energizer" (lampeggianti) e mangia tutti i fantasmi facendo più punti
-            possibili!</p>
+        <p id="instructions0">Colleziona le "Pillole" (lampeggianti) per mangiare i fantasi e finisci tutte le "berry"
+            senza essere catturato da un fantasma per vincere!</p>
         <p>
-            <button onclick="startGame()">Gioca ora!</button>
+            <button onclick="startGame()">Gioca ora!</button> <br>
+            <input type="color" id="colorPicker" placeholder="colore" value="#FF0000">
         </p>
     </div>
 
-    <div class="container">
+    <div id="canvass" class="container" hidden>
         <div class="item">
-            <canvas id="pmcanvas" width="448" height="496"></canvas><br />
+            <canvas id="pmcanvas" width="450" height=500"></canvas><br />
             <div id="point-counter" class="text"></div>
         </div>
 
@@ -127,13 +145,10 @@
                 <!-- <table id="score-table" class="text" style="border: solid 1px white; margin: 0 auto;"></table> -->
                 <!-- <p class="smallText" style="text-align: center;">The score table keeps track of local matches only.</p> -->
                 <br />
-                <a href="#" style="text-decoration: none; color: white;"
-                    onclick="pacman.engine.newGame(pacman.model.username); pacman.engine.hideResultView();">Gioca di
+                <a href="#" onclick="pacman.engine.newGame('username'); pacman.engine.hideResultView()">Gioca di
                     nuovo</a>
-                <br />
-                <a href="#" style="text-decoration: none; color: white;"
-                    onclick="pacman.engine.hideResultView(); initWelcomeView(); detachKeyListener();">Torna
-                    indietro</a>
+                <a href="#" onclick="pacman.engine.hideResultView(); initWelcomeView(); deteachKeyListener();">Torna al
+                    menu</a>
             </div>
         </div>
     </div>

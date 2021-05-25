@@ -1,4 +1,11 @@
 var pacman = {};
+var color1 = '#FF0000'
+
+document.getElementById('colorPicker').addEventListener('input', changeColor)
+
+function changeColor() {
+    color1 = document.getElementById('colorPicker').value;
+}
 
 pacman.ds = {
     Heap: function (eq) {
@@ -1400,7 +1407,7 @@ pacman.engine = {
         pacman.g.clear();
 
         //// Draw ghost box.
-        pacman.g.setFillStyle("#0000ff");
+        pacman.g.setFillStyle(color1);
         // left
         pacman.g.drawVertLine(8 * 10 + 4,
             8 * 12 + 4,
@@ -1449,7 +1456,7 @@ pacman.engine = {
         pacman.g.fillRect(8 * 13, 8 * 12 + 5, 8 * 2, 2);
 
         //// draw border shit
-        pacman.g.setFillStyle("#0000ff");
+        pacman.g.setFillStyle(color1);
 
         for (y = 0; y < pacman.settings.h; y++) {
             for (x = 0; x < pacman.settings.w; x++) {
@@ -1486,7 +1493,7 @@ pacman.engine = {
                     continue;
                 }
 
-                pacman.g.setFillStyle("#0000ff");
+                pacman.g.setFillStyle(color1);
                 var n = tile.getNonObstacleNeighborsExt();
 
                 switch (n.length) {
@@ -1746,9 +1753,9 @@ pacman.engine = {
         if (status === pacman.engine.magic.CONTINUE) {
             setTimeout(pacman.engine.tick, 1000 / 60);
         } else if (status === pacman.engine.magic.FAIL) {
-            pacman.engine.showResultView("Hai perso! Hai totalizzato " + pacman.model.points + " punti.");
+            pacman.engine.showResultView("Hai perso! Hai totalizzato *" + pacman.model.points + "* punti.");
         } else if (status === pacman.engine.magic.VICTORY) {
-            pacman.engine.showResultView("HAI VINTO! Hai totalizzato " + pacman.model.points + " punti.");
+            pacman.engine.showResultView("HAI VINTO! Hai totalizzato *" + pacman.model.points + "* punti.");
         }
 
         if (pacman.engine.runs === true) {
@@ -1889,7 +1896,8 @@ function initGame(username) {
 
 function startGame() {
     document.getElementsByTagName('header')[0].style = "font-size: larger; font - family: 'Roboto'; margin-top: 0px; text-align: center;"
-    initGame("speriamo bene per l'esame :/")
+    document.getElementById('canvass').hidden = false
+    initGame("a")
 }
 
 function initWelcomeView() {
