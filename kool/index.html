@@ -1,0 +1,100 @@
+<head>
+    <meta name="description" content="Tilid.in 2021">
+    <title>tilid.in</title>
+    <link rel="stylesheet/less" type="text/css" href="style.css">
+    <style type="text/css" id="less:style">
+        body {
+            background: black;
+            text-align: center;
+        }
+
+        div.popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            padding: 10em;
+            background: #00000000;
+        }
+
+        div.footer {
+            position: fixed;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            text-align: center;
+            bottom: 1rem;
+        }
+
+        * {
+            color: white;
+            overflow: hidden;
+            font-size: 100%;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font-family: 'Courier New', Courier, monospace;
+            vertical-align: baseline;
+        }
+
+        video {
+            position: fixed;
+            z-index: -1;
+            visibility: hidden;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <link rel="icon" href="//cdn.iconscout.com/icon/free/png-256/pill-1919732-1620243.png">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div class="popup">
+        press any key
+    </div>
+
+    <div class="footer">
+        <p>realpingu</p>
+        <p>
+            <script language="JavaScript" type="text/javascript">
+                document.write((new Date()).getFullYear());
+            </script>
+        </p>
+    </div>
+
+    <video muted="" preload="" loop="" style="visibility: visible;" src="./vids/aitch.mp4">
+        <source src="aitch.mp4" type="video/mp4">
+        <script>
+            const videos = [
+                "taste_shiva.mp4",
+                "central_cee.mp4",
+                "aitch.mp4",
+                "safe_to_say.mp4",
+                "unknown_p.mp4",
+                "taste.mp4",
+                "aitch_duppy.mp4",
+                "646.mp4",
+                "comm_issues.mp4"
+            ]
+            const random = Math.floor(Math.random() * videos.length);
+
+            var videoName = videos[random];
+
+            document.getElementsByTagName("video")[0].src = "./vids/" + videoName;
+            document.getElementsByTagName("video")[0].volume = 0.5;
+        </script>
+    </video>
+</body>
+
+<script src="load.js"></script>
